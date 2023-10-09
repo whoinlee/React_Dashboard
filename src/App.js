@@ -1,10 +1,20 @@
-
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ThemeModeContext, useThemeMode } from "./theme";
 
 function App() {
-  return (
-    <div className="app">
+  const [theme, themeMode] = useThemeMode();
 
-    </div>
+  return (
+    <ThemeModeContext.Provider value={themeMode}>
+      <ThemeProvider theme={theme}>
+        {/* resets css to default - */}
+        <CssBaseline />
+        <div className="app">
+          <main className="content">
+          </main>
+        </div>
+      </ThemeProvider>
+    </ThemeModeContext.Provider>
   );
 }
 
