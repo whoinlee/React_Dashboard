@@ -16,20 +16,24 @@ const Topbar = () => {
   const themeMode = useContext(ThemeModeContext);
 
   return (
-    <Box display="flex" justifyContent="space-between" p={2}>
-      {/* SEARCH BAR */}
+    <Box  display="flex" 
+          justifyContent="space-between" 
+          p={2}>
+      {/* ===== SEARCH ===== */}
       <Box
         display="flex"
         backgroundColor={colors.primary[400]}
         borderRadius="3px"
       >
+        {/* search input field */}
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+        {/* search icon */}
         <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon />
         </IconButton>
       </Box>
 
-      {/* ICONS */}
+      {/* ===== 4 ICONS ===== */}
       <Box display="flex">
         <IconButton onClick={themeMode.toggleThemeMode}>
           {theme.palette.mode === "dark" ? (
