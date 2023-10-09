@@ -1,5 +1,6 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ThemeModeContext, useThemeMode } from "./theme";
+import Topbar from "./pages/global/Topbar";
 
 function App() {
   const [theme, themeMode] = useThemeMode();
@@ -11,6 +12,7 @@ function App() {
         <CssBaseline />
         <div className="app">
           <main className="content">
+            <Topbar />
           </main>
         </div>
       </ThemeProvider>
