@@ -1,1 +1,1 @@
-# React Admin Dashboard
+# React Dashboard
