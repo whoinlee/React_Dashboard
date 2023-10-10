@@ -11,10 +11,10 @@ import Invoices from "./components/pages/invoices";
 import ProfileForm from "./components/pages/profileForm";
 import Calendar from "./components/pages/calendar";
 import FAQ from "./components/pages/faq";
-// import Bar from "./components/pages/barChart";
-// import Pie from "./components/pages/pieChart";
-// import Line from "./components/pages/lineChart";
-// import Geography from "./components/pages/geoChart";
+import Bar from "./components/pages/barChart";
+import Pie from "./components/pages/pieChart";
+import Line from "./components/pages/lineChart";
+import Geography from "./components/pages/geoChart";
 
 
 function App() {
@@ -37,10 +37,10 @@ function App() {
               <Route path="/profileForm" element={<ProfileForm />} />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/faq" element={<FAQ />} />
-              {/* <Route path="/barChart" element={<Bar />} /> */}
-              {/* <Route path="/pieChart" element={<Pie />} /> */}
-              {/* <Route path="/lineChart" element={<Line />} /> */}
-              {/* <Route path="/geoChart" element={<Geography />} /> */}
+              <Route path="/barChart" element={<Bar />} />
+              <Route path="/pieChart" element={<Pie />} />
+              <Route path="/lineChart" element={<Line />} />
+              <Route path="/geoChart" element={<Geography />} />
             </Routes>
           </main>
         </div>
