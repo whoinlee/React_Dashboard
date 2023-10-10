@@ -9,7 +9,7 @@ import Team from "./components/pages/team";
 import Contacts from "./components/pages/contacts";
 import Invoices from "./components/pages/invoices";
 import ProfileForm from "./components/pages/profileForm";
-// import Calendar from "./components/pages/calendar";
+import Calendar from "./components/pages/calendar";
 import FAQ from "./components/pages/faq";
 // import Bar from "./components/pages/barChart";
 // import Pie from "./components/pages/pieChart";
@@ -35,7 +35,7 @@ function App() {
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/profileForm" element={<ProfileForm />} />
-              {/* <Route path="/calendar" element={<Calendar />} /> */}
+              <Route path="/calendar" element={<Calendar />} />
               <Route path="/faq" element={<FAQ />} />
               {/* <Route path="/barChart" element={<Bar />} /> */}
               {/* <Route path="/pieChart" element={<Pie />} /> */}

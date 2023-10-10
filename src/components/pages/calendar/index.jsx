@@ -1,5 +1,6 @@
 import { useState } from "react";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
+import { formatDate } from "@fullcalendar/core";
+import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -12,16 +13,17 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import Header from "../../components/Header";
-import { tokens } from "../../theme";
+import Header from "../../base/Header";
+import { colorTokens } from "../../../theme/theme";
+
 
 const Calendar = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const colors = colorTokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
 
   const handleDateClick = (selected) => {
-    const title = prompt("Please enter a new title for your event");
+    const title = prompt("Please enter a new title for your event");  //browser alert
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
 
@@ -35,21 +37,16 @@ const Calendar = () => {
       });
     }
   };
-
   const handleEventClick = (selected) => {
-    if (
-      window.confirm(
-        `Are you sure you want to delete the event '${selected.event.title}'`
-      )
-    ) {
+    if (window.confirm(`Are you sure you want to delete the event '${selected.event.title}'`)) {
+      //-- remove the selectedevent
       selected.event.remove();
     }
   };
 
   return (
     <Box m="20px">
-      <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
-
+      <Header title="CALENDAR" subtitle="Interactive Full Calendar Page" />
       <Box display="flex" justifyContent="space-between">
         {/* CALENDAR SIDEBAR */}
         <Box
@@ -85,7 +82,6 @@ const Calendar = () => {
             ))}
           </List>
         </Box>
-
         {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
           <FullCalendar
@@ -99,7 +95,7 @@ const Calendar = () => {
             headerToolbar={{
               left: "prev,next today",
               center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
+              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth", //-- !!!no space between
             }}
             initialView="dayGridMonth"
             editable={true}
@@ -113,12 +109,12 @@ const Calendar = () => {
               {
                 id: "12315",
                 title: "All-day event",
-                date: "2022-09-14",
+                date: "2023-09-14",
               },
               {
                 id: "5123",
-                title: "Timed event",
-                date: "2022-09-28",
+                title: "React Dashboard Testing",
+                date: "2023-09-28",
               },
             ]}
           />
