@@ -1,19 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ThemeModeContext, useThemeMode } from "./theme";
-import Sidebar from "./pages/Sidebar";
-import Topbar from "./pages/Topbar";
-import Dashboard from "./pages/dashboard";
-import Team from "./pages/team";
-import Contacts from "./pages/contacts";
-import Invoices from "./pages/invoices";
-import ProfileForm from "./pages/profileForm";
-// import Calendar from "./pages/calendar";
-import FAQ from "./pages/faq";
-// import Bar from "./pages/barChart";
-// import Pie from "./pages/pieChart";
-// import Line from "./pages/lineChart";
-// import Geography from "./pages/geoChart";
+import Sidebar from "./components/pages/Sidebar";
+import Topbar from "./components/pages/Topbar";
+import Dashboard from "./components/pages/dashboard";
+import Team from "./components/pages/team";
+import Contacts from "./components/pages/contacts";
+import Invoices from "./components/pages/invoices";
+import ProfileForm from "./components/pages/profileForm";
+// import Calendar from "./components/pages/calendar";
+import FAQ from "./components/pages/faq";
+// import Bar from "./components/pages/barChart";
+// import Pie from "./components/pages/pieChart";
+// import Line from "./components/pages/lineChart";
+// import Geography from "./components/pages/geoChart";
 
 
 function App() {
