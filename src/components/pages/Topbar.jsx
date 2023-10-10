@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { colorTokens } from "../../theme/theme";
 import ThemeModeContext from "../../contexts/themeModeContext";
-// import { ThemeModeContext, tokens } from "../../theme/theme";
 import { Box, IconButton, useTheme } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 //-- icons

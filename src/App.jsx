@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import ThemeModeContext from "./contexts/themeModeContext";
 import useThemeMode from "./hooks/useThemeMode";
-// import { ThemeModeContext, useThemeMode } from "./theme/theme";
 import Sidebar from "./components/pages/Sidebar";
 import Topbar from "./components/pages/Topbar";
 import Dashboard from "./components/pages/dashboard";
