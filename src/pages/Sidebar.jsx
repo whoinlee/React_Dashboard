@@ -163,7 +163,7 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Profile Form"
-              to="/form"
+              to="/profileForm"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -192,28 +192,28 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Bar Chart"
-              to="/bar"
+              to="/barChart"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Pie Chart"
-              to="/pie"
+              to="/pieChart"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Line Chart"
-              to="/line"
+              to="/lineChart"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Geography Chart"
-              to="/geography"
+              to="/geoChart"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
