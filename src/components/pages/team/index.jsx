@@ -2,10 +2,11 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { colorTokens } from "../../../theme/theme";
 import { mockDataTeam } from "../../../data/mockData";
+import Header from "../../base/Header";
+//-- icons
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-import Header from "../../base/Header";
 
 const Team = () => {
   const theme = useTheme();
@@ -16,12 +17,12 @@ const Team = () => {
       field: "name",
       headerName: "Name",
       flex: 1,
-      cellClassName: "name-column--cell",
+      cellClassName: "name-column--cell", //-- for text color changing
     },
     {
       field: "age",
       headerName: "Age",
-      type: "number",
+      type: "number",                     //-- small column
       headerAlign: "left",
       align: "left",
     },
@@ -39,12 +40,13 @@ const Team = () => {
       field: "accessLevel",
       headerName: "Access Level",
       flex: 1,
+      //* ********** *//
       renderCell: ({ row: { access } }) => {
         return (
           <Box
             width="60%"
-            m="0 auto"
-            p="5px"
+            m="0 auto"  //margin
+            p="5px"     //padding
             display="flex"
             justifyContent="center"
             backgroundColor={
@@ -56,7 +58,8 @@ const Team = () => {
             }
             borderRadius="4px"
           >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
+            {/* icons */}
+            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}  
             {access === "manager" && <SecurityOutlinedIcon />}
             {access === "user" && <LockOpenOutlinedIcon />}
             <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
@@ -64,13 +67,14 @@ const Team = () => {
             </Typography>
           </Box>
         );
-      },
+      }
+      //* ********** *//
     },
   ];
 
   return (
     <Box m="20px">
-      <Header title="TEAM" subtitle="Managing the Team Members" />
+      <Header title="TEAM" subtitle="Team Members" />
       <Box
         m="40px 0 0 0"
         height="75vh"
@@ -82,6 +86,7 @@ const Team = () => {
             borderBottom: "none",
           },
           "& .name-column--cell": {
+            //** name cell className **/
             color: colors.greenAccent[300],
           },
           "& .MuiDataGrid-columnHeaders": {

@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { useTheme } from "@mui/material";
 import { colorTokens } from "../../../theme/theme";
 import { mockDataContacts } from "../../../data/mockData";
 import Header from "../../base/Header";
-import { useTheme } from "@mui/material";
 
 const Contacts = () => {
   const theme = useTheme();
@@ -49,14 +49,14 @@ const Contacts = () => {
       field: "zipCode",
       headerName: "Zip Code",
       flex: 1,
-    },
+    }
   ];
 
   return (
     <Box m="20px">
       <Header
         title="CONTACTS"
-        subtitle="List of Contacts for Future Reference"
+        subtitle="List of Contacts"
       />
       <Box
         m="40px 0 0 0"
@@ -93,7 +93,7 @@ const Contacts = () => {
         <DataGrid
           rows={mockDataContacts}
           columns={columns}
-          components={{ Toolbar: GridToolbar }}
+          slots={{ Toolbar: GridToolbar }}  //????? TODO: not working ?????//
         />
       </Box>
     </Box>
