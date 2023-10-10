@@ -1,5 +1,5 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../../theme";
+import { colorTokens } from "../../../theme/theme";
 import { mockTransactions } from "../../../data/mockData";
 import Header from "../../base/Header";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
@@ -16,7 +16,7 @@ import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 
 const Dashboard = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const colors = colorTokens(theme.palette.mode);
 
   return (
     <Box m="20px">

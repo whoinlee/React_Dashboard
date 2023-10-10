@@ -1,6 +1,6 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../../theme";
+import { colorTokens } from "../../../theme/theme";
 import { mockDataTeam } from "../../../data/mockData";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
@@ -9,7 +9,7 @@ import Header from "../../base/Header";
 
 const Team = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const colors = colorTokens(theme.palette.mode);
   const columns = [
     { field: "id", headerName: "ID" },
     {

@@ -5,11 +5,11 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { tokens } from "../../../theme";
+import { colorTokens } from "../../../theme/theme";
 
 const FAQ = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const colors = colorTokens(theme.palette.mode);
   return (
     <Box m="20px">
       <Header title="FAQ" subtitle="Frequently Asked Questions Page" />

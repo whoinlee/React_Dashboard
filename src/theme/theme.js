@@ -1,47 +1,5 @@
-import { createContext, useState, useMemo } from "react";
-import { createTheme } from "@mui/material/styles";
-
-//-- cmd+k+g with Tailwind Shades for #666666
-// indigo: {
-//     100: "#e0e0e0",
-//     200: "#c2c2c2",
-//     300: "#a3a3a3",
-//     400: "#858585",
-//     500: "#666666",
-//     600: "#525252",
-//     700: "#3d3d3d",
-//     800: "#292929",
-//     900: "#141414"
-// },
-
-//-- for #141b2d
-// black: {
-//     100: "#d0d1d5",
-//     200: "#a1a4ab",
-//     300: "#727681",
-//     400: "#434957",
-//     500: "#141b2d",
-//     600: "#101624",
-//     700: "#0c101b",
-//     800: "#080b12",
-//     900: "#040509"
-// },
-
-//-- for #4cceac, w. cmd+k+g
-// green: {
-//     100: "#dbf5ee",
-//     200: "#b7ebde",
-//     300: "#94e2cd",
-//     400: "#70d8bd",
-//     500: "#4cceac",
-//     600: "#3da58a",
-//     700: "#2e7c67",
-//     800: "#1e5245",
-//     900: "#0f2922"
-// },
-
-// color design tokens export
-export const tokens = (mode) => ({
+//-- color tokens
+export const colorTokens = (mode) => ({
   ...(mode === "dark"
     ? {
         grey: {
@@ -160,15 +118,31 @@ export const tokens = (mode) => ({
       }),
 });
 
-// mui theme settings
+/*
+//-- cmd+k+g with Tailwind Shades for #666666
+// indigo: {
+//     100: "#e0e0e0",
+//     200: "#c2c2c2",
+//     300: "#a3a3a3",
+//     400: "#858585",
+//     500: "#666666",
+//     600: "#525252",
+//     700: "#3d3d3d",
+//     800: "#292929",
+//     900: "#141414"
+// }
+*/
+
+//-- mui theme settings
+const FONTS = ["Source Sans Pro", "Source Code Pro", "Roboto", "sans-serif"];
+const FONT_FAMILY = FONTS.join(",");
 export const themeSettings = (mode) => {
-  const colors = tokens(mode);
+  const colors = colorTokens(mode);
   return {
     palette: {
       mode: mode,
       ...(mode === "dark"
         ? {
-            // dark mode
             primary: {
               main: colors.primary[500],
             },
@@ -182,10 +156,9 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: colors.primary[500],
-            },
+            }
           }
         : {
-            // light mode
             primary: {
               main: colors.primary[100],
             },
@@ -199,57 +172,57 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: "#fcfcfc",
-            },
+            }
           }),
     },
     typography: {
-      fontFamily: ["Source Sans Pro", "Source Code Pro", "Roboto", "sans-serif"].join(","),
+      fontFamily: FONT_FAMILY,
       fontSize: 12,
+
       h1: {
-        fontFamily: ["Source Sans Pro", "Source Code Pro", "Roboto", "sans-serif"].join(","),
+        fontFamily: FONT_FAMILY,
         fontSize: 40,
       },
       h2: {
-        fontFamily: ["Source Sans Pro", "Source Code Pro", "Roboto", "sans-serif"].join(","),
+        fontFamily: FONT_FAMILY,
         fontSize: 32,
       },
       h3: {
-        fontFamily: ["Source Sans Pro", "Source Code Pro", "Roboto", "sans-serif"].join(","),
+        fontFamily: FONT_FAMILY,
         fontSize: 24,
       },
       h4: {
-        fontFamily: ["Source Sans Pro", "Source Code Pro", "Roboto", "sans-serif"].join(","),
+        fontFamily: FONT_FAMILY,
         fontSize: 20,
       },
       h5: {
-        fontFamily: ["Source Sans Pro", "Source Code Pro", "Roboto", "sans-serif"].join(","),
+        fontFamily: FONT_FAMILY,
         fontSize: 16,
       },
       h6: {
-        fontFamily: ["Source Sans Pro", "Source Code Pro", "Roboto", "sans-serif"].join(","),
+        fontFamily: FONT_FAMILY,
         fontSize: 14,
-      },
+      }
+
     },
   };
 };
 
 //-- context for theme mode
-export const ThemeModeContext = createContext({
-  toggleThemeMode: () => {},
-});
+// export const ThemeModeContext = createContext({
+//   toggleThemeMode: () => {},
+// });
 
 //-- custom hook for use theme mode
-export const useThemeMode = () => {
-  const [mode, setMode] = useState("dark");
-
-  const themeMode = useMemo(() => ({
-      toggleThemeMode: () =>
-        setMode((prev) => (prev === "light" ? "dark" : "light")),
-    }),
-    []
-  );
-
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
-
-  return [theme, themeMode];
-};
+// export const useThemeMode = () => {
+//   const [mode, setMode] = useState("dark");
+//   const themeMode = useMemo(() => ({
+//       toggleThemeMode: () =>
+//         setMode((prev) => (prev === "light" ? "dark" : "light")),
+//     }),
+//     []
+//   );
+//   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+//
+//   return [theme, themeMode];
+// };
