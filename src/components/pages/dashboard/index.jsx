@@ -11,8 +11,8 @@ import TrafficIcon from "@mui/icons-material/Traffic";
 import LineChart from "../../charts/LineChart";
 import GeoChart from "../../charts/GeoChart";
 import BarChart from "../../charts/BarChart";
-// import StatBox from "../components/StatBox";
-// import ProgressCircle from "../components/ProgressCircle";
+import StatBox from "../../charts/StatBox";
+import ProgressCircle from "../../base/ProgressCircle";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -53,7 +53,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          {/* <StatBox
+          <StatBox
             title="12,361"
             subtitle="Emails Sent"
             progress="0.75"
@@ -63,7 +63,7 @@ const Dashboard = () => {
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
-          /> */}
+          />
         </Box>
         <Box
           gridColumn="span 3"
@@ -72,7 +72,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          {/* <StatBox
+          <StatBox
             title="431,225"
             subtitle="Sales Obtained"
             progress="0.50"
@@ -82,7 +82,7 @@ const Dashboard = () => {
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
-          /> */}
+          />
         </Box>
         <Box
           gridColumn="span 3"
@@ -91,7 +91,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          {/* <StatBox
+          <StatBox
             title="32,441"
             subtitle="New Clients"
             progress="0.30"
@@ -101,7 +101,7 @@ const Dashboard = () => {
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
-          /> */}
+          />
         </Box>
         <Box
           gridColumn="span 3"
@@ -110,7 +110,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
-          {/* <StatBox
+          <StatBox
             title="1,325,134"
             subtitle="Traffic Received"
             progress="0.80"
@@ -120,7 +120,7 @@ const Dashboard = () => {
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
-          /> */}
+          />
         </Box>
 
         {/* ROW 2 */}
@@ -231,7 +231,7 @@ const Dashboard = () => {
             alignItems="center"
             mt="25px"
           >
-            {/* <ProgressCircle size="125" /> */}
+            <ProgressCircle size="125" />
             <Typography
               variant="h5"
               color={colors.greenAccent[500]}
